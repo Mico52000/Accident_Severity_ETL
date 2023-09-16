@@ -1,0 +1,24 @@
+[2023-01-04T19:58:17.915+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T19:58:14.401233+00:00 [queued]>
+[2023-01-04T19:58:17.924+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T19:58:14.401233+00:00 [queued]>
+[2023-01-04T19:58:17.925+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:58:17.925+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2023-01-04T19:58:17.927+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:58:17.943+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): augment_dataset_task> on 2023-01-04 19:58:14.401233+00:00
+[2023-01-04T19:58:17.949+0000] {standard_task_runner.py:55} INFO - Started process 513 to run task
+[2023-01-04T19:58:17.952+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'augment_dataset_task', 'manual__2023-01-04T19:58:14.401233+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmplob9xig8']
+[2023-01-04T19:58:17.953+0000] {standard_task_runner.py:83} INFO - Job 89: Subtask augment_dataset_task
+[2023-01-04T19:58:18.024+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T19:58:14.401233+00:00 [running]> on host 4de77850e514
+[2023-01-04T19:58:18.103+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=augment_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T19:58:14.401233+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T19:58:14.401233+00:00
+[2023-01-04T19:58:18.107+0000] {logging_mixin.py:137} INFO - The lookup table and the augmented file already exist and are saved as csv.
+[2023-01-04T19:58:18.107+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-04T19:58:18.117+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=accidents_etl_pipeline, task_id=augment_dataset_task, execution_date=20230104T195814, start_date=20230104T195817, end_date=20230104T195818
+[2023-01-04T19:58:18.164+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-04T19:58:18.194+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check

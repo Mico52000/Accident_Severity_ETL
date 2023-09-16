@@ -1,0 +1,81 @@
+[2023-01-04T19:40:18.204+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:38:20.609062+00:00 [queued]>
+[2023-01-04T19:40:18.216+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:38:20.609062+00:00 [queued]>
+[2023-01-04T19:40:18.217+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:40:18.217+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2023-01-04T19:40:18.218+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:40:18.233+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): create_dashboard_task> on 2023-01-04 19:38:20.609062+00:00
+[2023-01-04T19:40:18.239+0000] {standard_task_runner.py:55} INFO - Started process 553 to run task
+[2023-01-04T19:40:18.243+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'create_dashboard_task', 'manual__2023-01-04T19:38:20.609062+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmpddk92_iw']
+[2023-01-04T19:40:18.245+0000] {standard_task_runner.py:83} INFO - Job 73: Subtask create_dashboard_task
+[2023-01-04T19:40:18.336+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:38:20.609062+00:00 [running]> on host 4de77850e514
+[2023-01-04T19:40:18.437+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=create_dashboard_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T19:38:20.609062+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T19:38:20.609062+00:00
+[2023-01-04T19:40:19.913+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:192 DtypeWarning: Columns (35) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-01-04T19:40:19.983+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913 SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T19:40:21.422+0000] {logging_mixin.py:137} INFO - 0         Kensington and Chelsea
+1         Kensington and Chelsea
+2         Kensington and Chelsea
+3         Kensington and Chelsea
+4         Kensington and Chelsea
+                   ...          
+151469     Dumfries and Galloway
+151470     Dumfries and Galloway
+151471     Dumfries and Galloway
+151472     Dumfries and Galloway
+151473     Dumfries and Galloway
+Name: local_authority_ons_district, Length: 151474, dtype: object
+[2023-01-04T19:40:22.895+0000] {logging_mixin.py:137} INFO - 0          Slight
+1         Serious
+2          Slight
+3          Slight
+4          Slight
+           ...   
+151469     Slight
+151470    Serious
+151471     Slight
+151472     Slight
+151473     Slight
+Name: accident_severity, Length: 151474, dtype: object
+[2023-01-04T19:40:22.919+0000] {logging_mixin.py:137} INFO - 0         30.0
+1         30.0
+2         30.0
+3         30.0
+4         30.0
+          ... 
+151469    70.0
+151470    60.0
+151471    70.0
+151472    60.0
+151473    60.0
+Name: speed_limit, Length: 151474, dtype: float64
+[2023-01-04T19:40:22.931+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/DashboardCreator.py", line 95, in createDashboard
+    dcc.Graph(figure=LineChart(df)),
+  File "/opt/airflow/dags/DashboardCreator.py", line 40, in LineChart
+    class_series = df.groupby('Month').size()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 7641, in groupby
+    dropna=dropna,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/groupby/groupby.py", line 897, in __init__
+    dropna=self.dropna,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/groupby/grouper.py", line 862, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'Month'
+[2023-01-04T19:40:22.946+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=accidents_etl_pipeline, task_id=create_dashboard_task, execution_date=20230104T193820, start_date=20230104T194018, end_date=20230104T194022
+[2023-01-04T19:40:22.958+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 73 for task create_dashboard_task ('Month'; 553)
+[2023-01-04T19:40:22.991+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-04T19:40:23.008+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

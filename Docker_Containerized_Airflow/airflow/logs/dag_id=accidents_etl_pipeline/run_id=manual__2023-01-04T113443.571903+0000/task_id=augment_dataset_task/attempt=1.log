@@ -1,0 +1,41 @@
+[2023-01-04T11:36:10.560+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T11:34:43.571903+00:00 [queued]>
+[2023-01-04T11:36:10.572+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T11:34:43.571903+00:00 [queued]>
+[2023-01-04T11:36:10.573+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T11:36:10.573+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2023-01-04T11:36:10.578+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T11:36:10.597+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): augment_dataset_task> on 2023-01-04 11:34:43.571903+00:00
+[2023-01-04T11:36:10.603+0000] {standard_task_runner.py:55} INFO - Started process 493 to run task
+[2023-01-04T11:36:10.606+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'augment_dataset_task', 'manual__2023-01-04T11:34:43.571903+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmpzbzc3u6q']
+[2023-01-04T11:36:10.609+0000] {standard_task_runner.py:83} INFO - Job 14: Subtask augment_dataset_task
+[2023-01-04T11:36:10.677+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.augment_dataset_task manual__2023-01-04T11:34:43.571903+00:00 [running]> on host 523cb283ca0d
+[2023-01-04T11:36:10.759+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=augment_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T11:34:43.571903+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T11:34:43.571903+00:00
+[2023-01-04T11:36:10.953+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913 SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T11:36:10.956+0000] {logging_mixin.py:137} WARNING - /opt/***/dags/Milestone3_2.py:64 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T11:36:12.757+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:5047 SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T11:36:39.840+0000] {logging_mixin.py:137} WARNING - /opt/***/dags/Milestone3_2.py:77 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T11:36:43.562+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-04T11:36:43.572+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=accidents_etl_pipeline, task_id=augment_dataset_task, execution_date=20230104T113443, start_date=20230104T113610, end_date=20230104T113643
+[2023-01-04T11:36:43.635+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-04T11:36:43.651+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

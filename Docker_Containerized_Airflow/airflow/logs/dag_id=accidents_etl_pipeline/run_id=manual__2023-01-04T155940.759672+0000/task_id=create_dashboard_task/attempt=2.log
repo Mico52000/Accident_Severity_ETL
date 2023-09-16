@@ -1,0 +1,29 @@
+[2023-01-04T16:20:18.247+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T15:59:40.759672+00:00 [queued]>
+[2023-01-04T16:20:18.258+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T15:59:40.759672+00:00 [queued]>
+[2023-01-04T16:20:18.259+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T16:20:18.259+0000] {taskinstance.py:1284} INFO - Starting attempt 2 of 2
+[2023-01-04T16:20:18.264+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T16:20:18.279+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): create_dashboard_task> on 2023-01-04 15:59:40.759672+00:00
+[2023-01-04T16:20:18.286+0000] {standard_task_runner.py:55} INFO - Started process 774 to run task
+[2023-01-04T16:20:18.289+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'create_dashboard_task', 'manual__2023-01-04T15:59:40.759672+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmplhk_vyse']
+[2023-01-04T16:20:18.292+0000] {standard_task_runner.py:83} INFO - Job 53: Subtask create_dashboard_task
+[2023-01-04T16:20:18.364+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T15:59:40.759672+00:00 [running]> on host 4de77850e514
+[2023-01-04T16:20:18.497+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=create_dashboard_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T15:59:40.759672+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T15:59:40.759672+00:00
+[2023-01-04T16:20:19.748+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:192 DtypeWarning: Columns (35) have mixed types.Specify dtype option on import or set low_memory=False.
+[2023-01-04T16:20:20.881+0000] {logging_mixin.py:137} INFO - Dash is running on http://0.0.0.0:8050/
+[2023-01-04T16:20:20.881+0000] {dash.py:1968} INFO - Dash is running on http://0.0.0.0:8050/
+
+[2023-01-04T16:20:20.887+0000] {logging_mixin.py:137} INFO -  * Serving Flask app '***'
+[2023-01-04T16:20:20.888+0000] {logging_mixin.py:137} INFO -  * Debug mode: off
+[2023-01-04T16:20:20.889+0000] {logging_mixin.py:137} WARNING - Address already in use
+[2023-01-04T16:20:20.889+0000] {logging_mixin.py:137} WARNING - Port 8050 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2023-01-04T16:20:20.951+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-04T16:20:20.968+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

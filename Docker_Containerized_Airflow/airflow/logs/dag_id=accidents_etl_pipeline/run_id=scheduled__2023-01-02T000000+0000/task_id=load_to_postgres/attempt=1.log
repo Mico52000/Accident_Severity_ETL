@@ -1,0 +1,48 @@
+[2023-01-04T11:34:45.903+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.load_to_postgres scheduled__2023-01-02T00:00:00+00:00 [queued]>
+[2023-01-04T11:34:45.916+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.load_to_postgres scheduled__2023-01-02T00:00:00+00:00 [queued]>
+[2023-01-04T11:34:45.917+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T11:34:45.917+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2023-01-04T11:34:45.918+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T11:34:45.940+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): load_to_postgres> on 2023-01-02 00:00:00+00:00
+[2023-01-04T11:34:45.948+0000] {standard_task_runner.py:55} INFO - Started process 297 to run task
+[2023-01-04T11:34:45.954+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'load_to_postgres', 'scheduled__2023-01-02T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmp3e80sl41']
+[2023-01-04T11:34:45.959+0000] {standard_task_runner.py:83} INFO - Job 13: Subtask load_to_postgres
+[2023-01-04T11:34:46.046+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.load_to_postgres scheduled__2023-01-02T00:00:00+00:00 [running]> on host 523cb283ca0d
+[2023-01-04T11:34:46.141+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=load_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-02T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-02T00:00:00+00:00
+[2023-01-04T11:34:46.146+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/accidents_etl.py", line 53, in load_to_postgres
+    df = pd.read_csv(filename)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/data/processed_accidents_2011.csv'
+[2023-01-04T11:34:46.161+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=accidents_etl_pipeline, task_id=load_to_postgres, execution_date=20230102T000000, start_date=20230104T113445, end_date=20230104T113446
+[2023-01-04T11:34:46.176+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 13 for task load_to_postgres ([Errno 2] No such file or directory: '/opt/airflow/data/processed_accidents_2011.csv'; 297)
+[2023-01-04T11:34:46.207+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-04T11:34:46.226+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

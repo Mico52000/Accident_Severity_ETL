@@ -1,0 +1,68 @@
+[2023-01-04T19:58:22.918+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:58:14.401233+00:00 [queued]>
+[2023-01-04T19:58:22.931+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:58:14.401233+00:00 [queued]>
+[2023-01-04T19:58:22.932+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:58:22.933+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2023-01-04T19:58:22.939+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T19:58:22.955+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): create_dashboard_task> on 2023-01-04 19:58:14.401233+00:00
+[2023-01-04T19:58:22.961+0000] {standard_task_runner.py:55} INFO - Started process 549 to run task
+[2023-01-04T19:58:22.964+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'create_dashboard_task', 'manual__2023-01-04T19:58:14.401233+00:00', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmp12qg1brb']
+[2023-01-04T19:58:22.966+0000] {standard_task_runner.py:83} INFO - Job 91: Subtask create_dashboard_task
+[2023-01-04T19:58:23.040+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:58:14.401233+00:00 [running]> on host 4de77850e514
+[2023-01-04T19:58:23.120+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=create_dashboard_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T19:58:14.401233+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T19:58:14.401233+00:00
+[2023-01-04T19:58:24.008+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913 SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T19:58:24.128+0000] {logging_mixin.py:137} INFO - 0         Kensington and Chelsea
+1         Kensington and Chelsea
+2         Kensington and Chelsea
+3         Kensington and Chelsea
+4         Kensington and Chelsea
+                   ...          
+148932                     Powys
+148933                     Powys
+148934                     Powys
+148935                     Powys
+148936                     Powys
+Name: local_authority_ons_district, Length: 148937, dtype: object
+[2023-01-04T19:58:24.246+0000] {logging_mixin.py:137} INFO - 0          Slight
+1         Serious
+2          Slight
+3          Slight
+4          Slight
+           ...   
+148932     Slight
+148933     Slight
+148934     Slight
+148935     Slight
+148936     Slight
+Name: accident_severity, Length: 148937, dtype: object
+[2023-01-04T19:58:24.279+0000] {logging_mixin.py:137} INFO - 0         30.0
+1         30.0
+2         30.0
+3         30.0
+4         30.0
+          ... 
+148932    60.0
+148933    60.0
+148934    30.0
+148935    60.0
+148936    60.0
+Name: speed_limit, Length: 148937, dtype: object
+[2023-01-04T19:58:25.579+0000] {logging_mixin.py:137} INFO - Dash is running on http://0.0.0.0:8050/
+[2023-01-04T19:58:25.579+0000] {dash.py:1968} INFO - Dash is running on http://0.0.0.0:8050/
+
+[2023-01-04T19:58:25.585+0000] {logging_mixin.py:137} INFO -  * Serving Flask app '***'
+[2023-01-04T19:58:25.586+0000] {logging_mixin.py:137} INFO -  * Debug mode: off
+[2023-01-04T19:58:25.586+0000] {logging_mixin.py:137} WARNING - Address already in use
+[2023-01-04T19:58:25.587+0000] {logging_mixin.py:137} WARNING - Port 8050 is in use by another program. Either identify and stop that program, or start the server with a different port.
+[2023-01-04T19:58:25.627+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-04T19:58:25.645+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

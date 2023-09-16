@@ -1,0 +1,103 @@
+[2023-01-04T20:03:21.586+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:56:29.653292+00:00 [queued]>
+[2023-01-04T20:03:21.597+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:56:29.653292+00:00 [queued]>
+[2023-01-04T20:03:21.598+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T20:03:21.598+0000] {taskinstance.py:1284} INFO - Starting attempt 4 of 4
+[2023-01-04T20:03:21.599+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-04T20:03:21.614+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): create_dashboard_task> on 2023-01-04 19:56:29.653292+00:00
+[2023-01-04T20:03:21.618+0000] {standard_task_runner.py:55} INFO - Started process 1198 to run task
+[2023-01-04T20:03:21.621+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'accidents_etl_pipeline', 'create_dashboard_task', 'manual__2023-01-04T19:56:29.653292+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/accidents_etl.py', '--cfg-path', '/tmp/tmpzrny_1iu']
+[2023-01-04T20:03:21.623+0000] {standard_task_runner.py:83} INFO - Job 93: Subtask create_dashboard_task
+[2023-01-04T20:03:21.689+0000] {task_command.py:389} INFO - Running <TaskInstance: accidents_etl_pipeline.create_dashboard_task manual__2023-01-04T19:56:29.653292+00:00 [running]> on host 4de77850e514
+[2023-01-04T20:03:21.774+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=accidents_etl_pipeline
+AIRFLOW_CTX_TASK_ID=create_dashboard_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-04T19:56:29.653292+00:00
+AIRFLOW_CTX_TRY_NUMBER=4
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-04T19:56:29.653292+00:00
+[2023-01-04T20:03:22.676+0000] {logging_mixin.py:137} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/frame.py:4913 SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2023-01-04T20:03:22.812+0000] {logging_mixin.py:137} INFO - 0         Kensington and Chelsea
+1         Kensington and Chelsea
+2         Kensington and Chelsea
+3         Kensington and Chelsea
+4         Kensington and Chelsea
+                   ...          
+148932                     Powys
+148933                     Powys
+148934                     Powys
+148935                     Powys
+148936                     Powys
+Name: local_authority_ons_district, Length: 148937, dtype: object
+[2023-01-04T20:03:22.955+0000] {logging_mixin.py:137} INFO - 0          Slight
+1         Serious
+2          Slight
+3          Slight
+4          Slight
+           ...   
+148932     Slight
+148933     Slight
+148934     Slight
+148935     Slight
+148936     Slight
+Name: accident_severity, Length: 148937, dtype: object
+[2023-01-04T20:03:22.987+0000] {logging_mixin.py:137} INFO - 0         30.0
+1         30.0
+2         30.0
+3         30.0
+4         30.0
+          ... 
+148932    60.0
+148933    60.0
+148934    30.0
+148935    60.0
+148936    60.0
+Name: speed_limit, Length: 148937, dtype: object
+[2023-01-04T20:03:24.271+0000] {logging_mixin.py:137} INFO - Dash is running on http://0.0.0.0:8020/
+[2023-01-04T20:03:24.271+0000] {dash.py:1968} INFO - Dash is running on http://0.0.0.0:8020/
+
+[2023-01-04T20:03:24.279+0000] {logging_mixin.py:137} INFO -  * Serving Flask app '***'
+[2023-01-04T20:03:24.279+0000] {logging_mixin.py:137} INFO -  * Debug mode: off
+[2023-01-04T20:03:24.280+0000] {_internal.py:224} INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8020
+ * Running on http://172.18.0.5:8020
+[2023-01-04T20:03:24.280+0000] {_internal.py:224} INFO - [33mPress CTRL+C to quit[0m
+[2023-01-04T20:03:45.620+0000] {local_task_job.py:82} ERROR - Received SIGTERM. Terminating subprocesses
+[2023-01-04T20:03:45.630+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 1198. PIDs of all processes in the group: [1198]
+[2023-01-04T20:03:45.631+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 1198
+[2023-01-04T20:03:45.632+0000] {taskinstance.py:1483} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-01-04T20:03:45.650+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/DashboardCreator.py", line 107, in createDashboard
+    app.run_server(host = "0.0.0.0",port=8020)
+  File "/home/airflow/.local/lib/python3.7/site-packages/dash/dash.py", line 2133, in run_server
+    self.run(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/dash/dash.py", line 1980, in run
+    self.server.run(host=host, port=port, debug=debug, **flask_run_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/flask/app.py", line 1188, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/werkzeug/serving.py", line 1098, in run_simple
+    srv.serve_forever()
+  File "/home/airflow/.local/lib/python3.7/site-packages/werkzeug/serving.py", line 741, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+  File "/usr/local/lib/python3.7/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/local/lib/python3.7/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1485, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-01-04T20:03:45.665+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=accidents_etl_pipeline, task_id=create_dashboard_task, execution_date=20230104T195629, start_date=20230104T200321, end_date=20230104T200345
+[2023-01-04T20:03:45.696+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 93 for task create_dashboard_task (Task received SIGTERM signal; 1198)
+[2023-01-04T20:03:45.725+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1198, status='terminated', exitcode=1, started='20:03:21') (1198) terminated with exit code 1
+[2023-01-04T20:03:45.726+0000] {local_task_job.py:159} INFO - Task exited with return code 143
+[2023-01-04T20:03:45.749+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
